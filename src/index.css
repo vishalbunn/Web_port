@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "@fontsource/inter";
+@import "@fontsource/space-grotesk";
+
+@theme {
+  --color-ai-bg: #FFFFFF;
+  --color-ai-surface: #FFFFFF;
+  --color-ai-primary: #000000;
+  --color-ai-secondary: #666666;
+  --color-ai-accent: #333333;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-ai-bg text-ai-primary antialiased font-sans selection:bg-black selection:text-white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Hyper-Minimalist Panel Defaults */
+.ai-panel {
+  @apply bg-white border border-black/[0.08] relative transition-all duration-300 rounded-[12px];
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.ai-panel:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+  @apply border-black/[0.12];
+}
+
+/* Minimalist Button Micro Interaction */
+.btn-micro {
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.btn-micro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-micro:active {
+  transform: translateY(0) scale(0.98);
+}
