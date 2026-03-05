@@ -1,10 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Github } from 'lucide-react';
 import { projectsData } from './ProjectsPage';
+import type { Project } from './ProjectsPage';
 
 const ProjectCaseStudy = () => {
     const { id } = useParams();
-    const project = projectsData.find(p => p.id === id);
+    const project = (projectsData as Project[]).find(p => p.id === id);
 
     if (!project) {
         return (

@@ -2,7 +2,24 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Github, Activity, Network, Layers, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const projectsData = [
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    capabilities: string[];
+    metrics: { label: string; value: string }[];
+    stack: string[];
+    architecture: string;
+    icon: JSX.Element;
+    links: {
+        github: string;
+        live?: string;
+        caseStudy?: string;
+    };
+    deployed?: boolean;
+}
+
+export const projectsData: Project[] = [
     {
         id: "health-ai",
         title: "Health Risk Predictor",
@@ -22,7 +39,12 @@ export const projectsData = [
         stack: ["Python", "XGBoost", "CatBoost", "Pandas", "Scikit-learn", "Docker"],
         architecture: "Biomarker Data → Preprocessing → SHAP Feature Selection → CatBoost Classifier → Risk Level Prediction",
         icon: <Activity size={24} strokeWidth={1.5} />,
-        links: { github: "https://github.com/vishalbunn", live: "https://enhanced-athlete-risk-predictor.onrender.com/docs" }
+        links: {
+            github: "https://github.com/vishalbunn",
+            live: "https://enhanced-athlete-risk-predictor.onrender.com/docs",
+            caseStudy: "/projects/health-ai"
+        },
+        deployed: true
     },
     {
         id: "aiori-diag",
@@ -43,7 +65,11 @@ export const projectsData = [
         stack: ["Django", "Django REST Framework", "Celery", "Redis", "Python", "Networking"],
         architecture: "Django API → Celery Queue → Redis Broker → Background Workers → Anchor Network Tests → RTT Analytics",
         icon: <Network size={24} strokeWidth={1.5} />,
-        links: { github: "https://github.com/vishalbunn/Rtt_ping" }
+        links: {
+            github: "https://github.com/vishalbunn/Rtt_ping",
+            caseStudy: "/projects/aiori-diag"
+        },
+        deployed: true
     },
     {
         id: "sentiment-ai",
@@ -64,7 +90,10 @@ export const projectsData = [
         stack: ["Flask", "XGBoost", "Scikit-learn", "NLTK", "Pandas", "Matplotlib"],
         architecture: "Text Input → Vectorization → Feature Scaling → XGBoost Model → Sentiment Prediction",
         icon: <Activity size={24} strokeWidth={1.5} />,
-        links: { github: "https://github.com/vishalbunn/Sentiment_Analysis" }
+        links: {
+            github: "https://github.com/vishalbunn/Sentiment_Analysis",
+            caseStudy: "/projects/sentiment-ai"
+        }
     }
 ];
 
@@ -176,7 +205,7 @@ const ProjectsPage = () => {
                                     </a>
                                 ) : project.links.caseStudy ? (
                                     <Link
-                                        to={project.links.caseStudy || "#"}
+                                        to={project.links.caseStudy}
                                         className="flex-1 btn-micro flex items-center justify-center gap-2 py-3.5 bg-white border border-stone-200 text-black rounded-2xl font-sans text-sm font-bold hover:bg-stone-50 transition-all shadow-sm"
                                     >
                                         Case Study <ArrowUpRight size={16} />
