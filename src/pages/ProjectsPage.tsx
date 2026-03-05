@@ -10,7 +10,7 @@ export interface Project {
     metrics: { label: string; value: string }[];
     stack: string[];
     architecture: string;
-    icon: JSX.Element;
+    icon: React.ReactNode;
     links: {
         github: string;
         live?: string;
