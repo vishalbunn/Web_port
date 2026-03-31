@@ -41,7 +41,7 @@ export const projectsData: Project[] = [
         icon: <Activity size={24} strokeWidth={1.5} />,
         links: {
             github: "https://github.com/vishalbunn",
-            live: "https://enhanced-athlete-risk-predictor.onrender.com/docs",
+            live: "https://enhanced-athlete-risk-predictor.onrender.com/",
             caseStudy: "/projects/health-ai"
         },
         deployed: true
