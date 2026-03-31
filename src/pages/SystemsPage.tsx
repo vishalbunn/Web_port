@@ -137,7 +137,7 @@ const SystemsPage = () => {
                 <div className="flex flex-col border-l border-stone-200 pl-8 ml-4 md:ml-0 md:pl-0 md:border-l-0">
                     {[
                         { date: "Jan 2025 - Jun 2026", title: "Research Intern", org: "Indian Internet Foundation", logs: ["Engineered automated data pipelines reducing ETL processing time by 40%.", "Optimized machine learning models for scale across distributed systems to handle large-scale datasets.", "Conducted advanced research independently and collaboratively in AI safety and ethics."] },
-                        { date: "2023 - Present", title: "BSc Computer Science", org: "Koneru lakshmaiah university", logs: ["Specialization in Artificial Intelligence and Machine Learning paradigms.", "Capstone project focused on deploying predictive healthcare models into edge environments.", "Graduated with honors, distinction in algorithmic design and distributed computing."] }
+                        { date: "2023 - Present", title: "B.Tech Computer Science", org: "Koneru lakshmaiah university", logs: ["Specialization in Artificial Intelligence and Machine Learning paradigms.", "Capstone project focused on deploying predictive healthcare models into edge environments.", "Graduated with honors, distinction in algorithmic design and distributed computing."] }
                     ].map((event, idx) => (
                         <motion.div
                             key={idx}
