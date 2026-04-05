@@ -92,8 +92,8 @@ export const projectsData: Project[] = [
     architecture: "User Query -> Orchestrator -> Multi-Agent Debate -> Bias & Critic -> Consensus -> Final Decision + Scoring",
     icon: <Layers size={24} strokeWidth={1.5} />,
     links: {
-      github: "https://github.com/YOUR_USERNAME/aegis-ai",
-      caseStudy: "/projects/aegis-ai"
+      github: "https://github.com/vishalbunn/Aegis-AI-",
+      live: "https://aegis-ai-gamma-silk.vercel.app/"
     },
     deployed: true
   }
